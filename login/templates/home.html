@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block start%}
+<div class="flex">
+  {% load socialaccount %} {% load static %}
+
+  <div class="left_side">
+    <div>
+      <img
+        class="prima_svg"
+        src="{% static 'images/PrimathonLogo.svg' %}"
+        alt=" SVG"
+      />
+    </div>
+    <div class="heading_container">
+      <div class="container">
+        <h2 class="heading">Welcome to Primathon</h2>
+        <h5 class="subheading">Welcome back! Please enter your details.</h5>
+        <a
+          href="{% provider_login_url 'google' %}?next=/google_auth/"
+          class="google_btn"
+          ><img src="{% static 'images/googlelogo.svg' %}" alt=" SVG" />
+          <div>Sign in with Google</div></a
+        >
+      </div>
+    </div>
+    <div class="footer">© Primathon</div>
+  </div>
+  <div class="right_side">
+    <img class="image" src="{% static 'images/bg.svg' %}" alt=" SVG" />
+  </div>
+</div>
+
+{% endblock %}
